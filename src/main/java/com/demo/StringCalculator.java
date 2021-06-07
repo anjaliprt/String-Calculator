@@ -7,15 +7,13 @@ public class StringCalculator {
 
 	
 	public static int sum(String input) {
-		if(input.isEmpty()) {
+		if(input.isEmpty())
 			return 0;
-		}
-		else if(input.contains(",")) {
-			Stream<String> number = Arrays.stream(input.split(","));
+			
+			Stream<String> number = Arrays.stream(input.split(",|\n"));
 			return number.mapToInt(Integer::parseInt).sum();
 		}
-		else {
-			return Integer.parseInt(input);
-		}
-	}
-}
+		
+	}	
+	
+
