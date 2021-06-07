@@ -15,6 +15,11 @@ class StringCalculatorTest {
 		assertEquals(3,StringCalculator.sum("3"));
 		assertEquals(56,StringCalculator.sum("56"));
     }
+	@Test
+	void sumsTwoNumbersSeparatedByComma() {
+		assertEquals(3,StringCalculator.sum("1,2"));
+		assertEquals(4,StringCalculator.sum("1,3"));
+	}
 }
 
 
