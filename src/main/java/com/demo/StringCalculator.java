@@ -1,5 +1,8 @@
 package com.demo;
 
+import java.util.Arrays;
+import java.util.stream.Stream;
+
 public class StringCalculator {
 
 	
@@ -8,8 +11,8 @@ public class StringCalculator {
 			return 0;
 		}
 		else if(input.contains(",")) {
-			String [] number = input.split(",");
-			return Integer.parseInt(number[0])+ Integer.parseInt(number[1]);
+			Stream<String> number = Arrays.stream(input.split(","));
+			return number.mapToInt(Integer::parseInt).sum();
 		}
 		else {
 			return Integer.parseInt(input);

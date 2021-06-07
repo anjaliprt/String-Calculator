@@ -20,6 +20,10 @@ class StringCalculatorTest {
 		assertEquals(3,StringCalculator.sum("1,2"));
 		assertEquals(4,StringCalculator.sum("1,3"));
 	}
+	@Test
+	void sumsThreeNumbersSeparatedByComma() {
+		assertEquals(6,StringCalculator.sum("1,2,3"));
+	}
 }
 
 
