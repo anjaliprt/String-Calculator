@@ -25,8 +25,16 @@ class StringCalculatorTest {
 		assertEquals(6,StringCalculator.sum("1,2,3"));
 	}
 	@Test
-	void sumsTwoNumbersDelimittedByNewLine() {
+	void sumsNumbersDelimittedByNewLine() {
 		assertEquals(3,StringCalculator.sum("1\n2"));
+	}
+	@Test
+	void sumNumbersDelimmitedByCommaOrNewLineOr() {
+		assertEquals(6,StringCalculator.sum("1,2\n3"));
+	}
+	@Test
+	void canAcceptDelimiterSpecified() {
+		assertEquals(3,StringCalculator.sum("//;\n1;2"));
 	}
 	
 }
