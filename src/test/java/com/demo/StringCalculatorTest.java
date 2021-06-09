@@ -54,8 +54,13 @@ class StringCalculatorTest {
 			fail ("Exception Expected.");
 		}
 		catch(RuntimeException e) {
-			assertEquals("negative not allowed: -1,-2",e.getMessage());
-		}	
+			assertEquals("negatives not allowed: -1,-2",e.getMessage());
+		}		
+	    }
+	@Test
+	void ignoreNumbersGreaterThan1000() {
+		assertEquals(2,StringCalculator.sum("1002"));
+		assertEquals(43,StringCalculator.sum("10043"));
 	}
 }
 

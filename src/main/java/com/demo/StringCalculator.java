@@ -27,7 +27,7 @@ public class StringCalculator {
 		if (!negativeNumberSequence.isEmpty()) 
 		{
 			
-		throw new RuntimeException("negative not allowed: " + negativeNumberSequence);
+		throw new RuntimeException("negatives not allowed: " + negativeNumberSequence);
 		}
 	}
 	private IntStream getNumber(){
@@ -35,7 +35,8 @@ public class StringCalculator {
 			return IntStream.empty();
 		else
 		return Stream.of(numbers.split(delimiter))
-				.mapToInt(Integer::parseInt);
+				.mapToInt(Integer::parseInt)
+		        .map(n -> n%1000); 
 				
 		
 	}
