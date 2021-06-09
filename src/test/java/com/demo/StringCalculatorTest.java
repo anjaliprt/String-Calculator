@@ -37,6 +37,26 @@ class StringCalculatorTest {
 		assertEquals(3,StringCalculator.sum("//;\n1;2"));
 	}
 	
+	@Test
+	void throwExceptionforNegativeNumbers() {
+		try {
+			StringCalculator.sum("-3");
+			//fail ("Exception Expected");
+		}
+		catch(RuntimeException e) {
+			
+		}
+		}
+	@Test
+	void exceptionMessageShouldContainTheNegativeNumber() {
+		try {
+			StringCalculator.sum("-1,-2,3");
+			fail ("Exception Expected.");
+		}
+		catch(RuntimeException e) {
+			assertEquals("negative not allowed: -1,-2",e.getMessage());
+		}	
+	}
 }
 
 
